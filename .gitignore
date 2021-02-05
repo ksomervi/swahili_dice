@@ -1,6 +1,7 @@
 *~
 *.o
 .*.swp
+__pycache__
 
 # Doc files
 *.aux
