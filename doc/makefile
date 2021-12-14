@@ -7,10 +7,7 @@ TARGET = swahili_dice
 	latex $<
 
 .dvi.ps ::
-	dvips $*.dvi
-
-.dvi.pdf ::
-	dvipdf $*.dvi
+	dvips -t letter $*.dvi
 
 all: ps pdf
 
@@ -22,6 +19,8 @@ pdf: ${TARGET}.pdf
 #	latex ${SRC}
 #	dvips ${TARGET}.dvi
 
+${TARGET}.pdf: ${TARGET}.ps
+	ps2pdf $?
 
 md: ${TARGET}.md
 
